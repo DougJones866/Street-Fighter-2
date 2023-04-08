@@ -9,7 +9,7 @@ import Characters from "./components/Characters.vue";
 
 <style>
 body {
-  background-image: url("./images/logo.png");
+  background-image: url("../images/logo.png");
   background-size: 250px;
   background-repeat: repeat;
   background-color: blue;
