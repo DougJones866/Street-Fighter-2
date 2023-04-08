@@ -2,7 +2,7 @@ body {
     background-image: url("./images/logo.png");
     background-size: 250px;
     background-repeat: repeat;
-    background-color: blue;
+    /* background-color: blue; */
     background-blend-mode: multiply;
     animation: animateBackground 40s linear infinite;
 }
