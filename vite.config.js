@@ -3,6 +3,6 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/streetfighter2',
+  base: '/Street-Fighter-2',
   plugins: [vue()],
 })

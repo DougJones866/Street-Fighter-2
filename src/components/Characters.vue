@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="characterBox">
     <h3>{{ selectedCharacter }}</h3>
     <div class="container">
       <div
@@ -16,7 +16,6 @@
         <img
           :src="`./portraits/${character.img}`"
           @click="selection(character)"
-          
           class="portrait"
         />
       </div>
@@ -128,7 +127,6 @@ export default {
       ],
       active: false,
       selectedCharacter: null,
-      
     };
   },
   methods: {
@@ -148,7 +146,6 @@ export default {
     characterStyle() {
       return (character) => {
         return {
-          
           backgroundColor: !character.active ? "#5683d4" : "red",
         };
       };
@@ -158,40 +155,51 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  color: orangered;
+}
 .container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
-  gap: 0px 0px;
-  /* grid-template-areas:
-    ". . . . . . . ."
-    ". . . . . . . ."; */
-  line-height: 0;
-  width: 0;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-evenly;
-  position: fixed;
+  gap: 0%;
+  line-height: 0%;
+  width: 0%;
+  margin:auto;
+  justify-content: center;
+  /* position: fixed; */
   left: 0;
-  bottom: 0;
+  bottom: 5%;
   right: 0;
-  margin-bottom: 30px;
-  
-  
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
-/* .characters:hover {
-  border: solid thin;
-} */
 
 .characters {
-  background-color:turquoise;
-  border:solid lightgray;
+  background-color: turquoise;
+  border: solid lightgray;
   border-style: inset;
-
 }
 
-/* .portrait {
-  background-color:aqua;
-} */
+@media only screen and (min-width: 1000px) {
+  .container {
+    position: fixed;
+  }
+}
+
+@media only screen and (max-width: 926px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  img {
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  img {
+  }
+}
 </style>
