@@ -3,11 +3,15 @@ import Characters from "./components/Characters.vue";
 </script>
 
 <template>
-  <div></div>
+  <div ><h2>Street Fighter</h2></div>
   <Characters />
 </template>
 
 <style>
+h2 {
+  color:orangered;
+}
+
 body {
   background-image: url("../images/logo.png");
   background-size: 250px;
