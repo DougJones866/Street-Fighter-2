@@ -1,20 +1,4 @@
-body {
-    background-image: url("./images/logo.png");
-    background-size: 250px;
-    background-repeat: repeat;
-    /* background-color: blue; */
-    background-blend-mode: multiply;
-    animation: animateBackground 40s linear infinite;
-}
 
-@keyframes animateBackground {
-    from {
-      background-position: 0 0; /* start at top-left corner */
-    }
-    to {
-      background-position: 100% 100%; /* end at bottom-right corner */
-    }
-  }
 
 
 /* @media only screen and (max-width: 500px) {

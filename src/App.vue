@@ -1,27 +1,30 @@
 <script setup>
-import Characters from './components/Characters.vue'
+import Characters from "./components/Characters.vue";
 </script>
 
 <template>
-  <div>
-    
-  </div>
+  <div></div>
   <Characters />
 </template>
 
-<style scoped>
+<style>
+body {
+  background-image: url("./images/logo.png");
+  background-size: 250px;
+  background-repeat: repeat;
+  background-color: blue;
+  background-blend-mode: multiply;
+  animation: animateBackground 40s linear infinite;
+}
+
+@keyframes animateBackground {
+  from {
+    background-position: 0 0; /* start at top-left corner */
+  }
+  to {
+    background-position: 100% 100%; /* end at bottom-right corner */
+  }
+}
 
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>
