@@ -1,11 +1,16 @@
 <template>
   <div class="characterBox">
+    <!-- Side Portrait -->
     <div class="selectedCharacter">
-      <img :src="`./portraits/${characterImg}`" class="bigPortrait" />
+      <img :src="`./portraits/${characterImg}`" class="bigPortrait" v-if="selectedCharacter" />
+      <img :src="`./portraits/ryu.gif`" class="bigPortrait" v-if="!selectedCharacter" />
       <div class="characterName">
-        <span class="cName">{{ selectedCharacter }}</span>
+        <span class="cName" v-if="selectedCharacter">{{ selectedCharacter }}</span>
+        <span class="cName" v-if="!selectedCharacter">Ryu</span>
       </div>
+      
     </div>
+    <!-- Character Grid -->
     <div class="container">
       <div
         v-for="character in characters"
@@ -38,6 +43,7 @@ export default {
           name: "Ryu",
           img: "ryu.gif",
           active: false,
+          
         },
         {
           id: 2,
@@ -137,6 +143,9 @@ export default {
   },
   methods: {
     selection(character) {
+      if (this.selectedCharacter){
+        this.selectedCharacter = "ryu.gif"
+      }
       this.selectedCharacter = `${character.name}`;
       this.characterImg = `${character.img}`;
       this.active = true;
@@ -149,6 +158,11 @@ export default {
     },
   },
   computed: {
+    defaultCharacter() {
+      if (this.selectedCharacter){
+        this.selectedCharacter = "ryu.gif"
+      }
+    },
     characterStyle() {
       return (character) => {
         return {
@@ -239,6 +253,11 @@ color: rgba(0, 0, 0, 0.2);
 @media only screen and (max-width: 500px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .characterBox {
+    display:flex;
+    flex-direction: row;
+
   }
 }
 </style>
