@@ -107,8 +107,8 @@ export default {
         },
         {
           id: 12,
-          name: "M Bison",
-          img: "mbison.gif",
+          name: "Vega",
+          img: "vega.gif",
           active: false,
         },
         {
@@ -125,8 +125,8 @@ export default {
         },
         {
           id: 15,
-          name: "Vega",
-          img: "vega.gif",
+          name: "M. Bison",
+          img: "bison.gif",
           active: false,
         },
         {
@@ -199,7 +199,7 @@ export default {
   background-color: red;
   display: inline-block;
   text-align: center;
-  font-size: 72px;
+  font-size: 6vw;
   background: linear-gradient(
     0deg,
     rgba(240, 149, 2, 1) 13%,
@@ -238,6 +238,7 @@ color: rgba(0, 0, 0, 0.2);
   border-style: inset;
 }
 
+
 @media only screen and (min-width: 1000px) {
   .container {
     position: fixed;
@@ -245,9 +246,25 @@ color: rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (max-width: 926px) {
-  .container {
-    grid-template-columns: repeat(4, 1fr);
+  
+  .characterBox{
+    display:flex;
   }
+  .container {
+    grid-template-columns: repeat(8, 1fr);
+    width: 10%;
+  }
+  .portrait{
+    width: 10vw;
+  }
+  .bigPortrait {
+    width: 15vw;
+    height: auto;
+  }
+  .selectedCharacter {
+    bottom: 5%;
+  }
+  
 }
 
 @media only screen and (max-width: 500px) {
@@ -257,7 +274,19 @@ color: rgba(0, 0, 0, 0.2);
   .characterBox {
     display:flex;
     flex-direction: row;
-
+  }
+  .portrait{
+    width: 15vw;
+  }
+  .characterBox{
+    display:flex;
+  }
+  .bigPortrait {
+    width: 25vw;
+    height: auto;
+  }
+  .selectedCharacter {
+    top: 5%;
   }
 }
 </style>
