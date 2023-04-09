@@ -1,6 +1,11 @@
 <template>
   <div class="characterBox">
-    <h3>{{ selectedCharacter }}</h3>
+    <div class="selectedCharacter">
+      <img :src="`./portraits/${characterImg}`" class="bigPortrait" />
+      <div class="characterName">
+        <span class="cName">{{ selectedCharacter }}</span>
+      </div>
+    </div>
     <div class="container">
       <div
         v-for="character in characters"
@@ -127,14 +132,15 @@ export default {
       ],
       active: false,
       selectedCharacter: null,
+      characterImg: null,
     };
   },
   methods: {
     selection(character) {
       this.selectedCharacter = `${character.name}`;
+      this.characterImg = `${character.img}`;
       this.active = true;
       console.log(`${character.name}`);
-      console.log(this.active);
     },
     setActive(character) {
       this.characters.forEach((c) => {
@@ -155,8 +161,39 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  color: orangered;
+.cName {
+  position: relative;
+  bottom: -0.02em;
+  
+}
+
+.characterBox {
+}
+
+.selectedCharacter {
+  position: absolute;
+  left: 5%;
+  bottom: 35%;
+  box-sizing: border-box;
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+}
+.characterName {
+  width: 100%;
+  left: 5%;
+  background-color: red;
+  display: inline-block;
+  text-align: center;
+  font-size: 72px;
+  background: linear-gradient(
+    0deg,
+    rgba(240, 149, 2, 1) 13%,
+    rgba(242, 244, 34, 1) 65%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
 }
 .container {
   display: grid;
@@ -164,7 +201,7 @@ h3 {
   gap: 0%;
   line-height: 0%;
   width: 0%;
-  margin:auto;
+  margin: auto;
   justify-content: center;
   /* position: fixed; */
   left: 0;
@@ -174,6 +211,12 @@ h3 {
   padding: 0 10px;
 }
 
+.bigPortrait {
+  height: 350px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.4); 
+color: rgba(0, 0, 0, 0.2);
+}
 
 .characters {
   background-color: turquoise;
@@ -191,15 +234,11 @@ h3 {
   .container {
     grid-template-columns: repeat(4, 1fr);
   }
-  img {
-  }
 }
 
 @media only screen and (max-width: 500px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
-  }
-  img {
   }
 }
 </style>

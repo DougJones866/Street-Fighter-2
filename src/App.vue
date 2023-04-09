@@ -3,14 +3,12 @@ import Characters from "./components/Characters.vue";
 </script>
 
 <template>
-  <div ><h2>Street Fighter</h2></div>
+  <div></div>
   <Characters />
 </template>
 
 <style>
-h2 {
-  color:orangered;
-}
+
 
 body {
   background-image: url("../images/logo.png");
@@ -29,6 +27,4 @@ body {
     background-position: 100% 100%; /* end at bottom-right corner */
   }
 }
-
-
 </style>
