@@ -1,4 +1,6 @@
 <template>
+  <div>
+    <header><h1>Player Select</h1></header>
   <div class="characterBox">
     <!-- Side Portrait -->
     <div class="selectedCharacter">
@@ -31,6 +33,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -175,6 +178,20 @@ export default {
 </script>
 
 <style scoped>
+header {
+  
+  text-align: center;
+  font-size: 3vw;
+  background: linear-gradient(
+    0deg,
+    rgba(240, 149, 2, 1) 13%,
+    rgba(242, 244, 34, 1) 65%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  
+}
 .cName {
   position: relative;
   bottom: -0.02em;

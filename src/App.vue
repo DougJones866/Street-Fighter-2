@@ -11,20 +11,22 @@ import Characters from "./components/Characters.vue";
 
 
 body {
-  background-image: url("../images/logo.png");
+  background-image: url("../images/sf2.png");
   background-size: 250px;
   background-repeat: repeat;
-  background-color: blue;
-  background-blend-mode: multiply;
+  background-color: #3e2e87;
+  
+  
   animation: animateBackground 40s linear infinite;
+  
 }
 
-@keyframes animateBackground {
+/* @keyframes animateBackground {
   from {
-    background-position: 0 0; /* start at top-left corner */
+    background-position: 0 0; 
   }
   to {
-    background-position: 100% 100%; /* end at bottom-right corner */
+    background-position: 100% 100%; 
   }
-}
+} */
 </style>
